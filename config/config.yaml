@@ -14,5 +14,5 @@ data_validation:
 
 data_transformation:
   root_dir: artifacts/data_transformation
-  data_path: artifacts/data_ingestion/sumsum_dataset
-  tokenizer_name: google/pegasus-cnn-dailymail
+  data_path: artifacts/data_ingestion/samsum_dataset
+  tokenizer_name: facebook/bart-large-cnn

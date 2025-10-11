@@ -207,3 +207,6 @@ marimo/_lsp/
 __marimo__/
 
 artifacts/*
+model/*
+facebook_model/*
+falcon_model/*
