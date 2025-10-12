@@ -210,3 +210,4 @@ artifacts/*
 model/*
 facebook_model/*
 falcon_model/*
+research/model_evaluation
