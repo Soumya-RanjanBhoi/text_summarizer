@@ -20,7 +20,7 @@ class PredictionPipelines:
             len_penalty = 1.2
 
         gen_kwargs = {
-            "num_beams": 8,
+            "num_beams": 4,
             "max_length": text_len,
             "min_length": 25,
             "length_penalty": len_penalty,
