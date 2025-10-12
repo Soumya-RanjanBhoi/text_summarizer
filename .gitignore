@@ -210,4 +210,7 @@ artifacts/*
 model/*
 facebook_model/*
 falcon_model/*
-research/model_evaluation
+research/model_evaluation.ipynb
+research/trails.ipynb
+translation_model/*
+translation_tokenizer/*

@@ -29,3 +29,11 @@ class ModelEvaluationConfig:
     model_path: Path
     metric_file_name: Path
 
+@dataclass(frozen=True)
+class ModelTranslationConfig:
+    root_dir:Path
+    tokenizer_path:Path
+    model_path:Path
+
+
+

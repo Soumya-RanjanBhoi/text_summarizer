@@ -1,6 +1,6 @@
 from textSummarizer.constants import *
 from textSummarizer.utils.common import read_yaml,create_directories
-from textSummarizer.entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelEvaluationConfig
+from textSummarizer.entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelEvaluationConfig,ModelTranslationConfig
 
 
 class ConfriguationManager:
@@ -64,5 +64,17 @@ class ConfriguationManager:
         )
 
         return model_evaluation_config
+    
+    def get_model_translation_config(self) ->ModelTranslationConfig:
+        config=self.config.model_translation
 
+        create_directories([config.root_dir])
+
+        model_translation_config=ModelTranslationConfig(
+            root_dir=config.root_dir,
+            tokenizer_path=config.tokenizer_path,
+            model_path=config.model_path
+        )
+
+        return model_translation_config
 

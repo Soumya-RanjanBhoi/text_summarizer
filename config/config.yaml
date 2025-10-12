@@ -22,3 +22,8 @@ model_evaluation:
   data_path: artifacts/data_transformation/samsum_dataset
   model_path: artifacts/model_trainer/facebook_model
   metric_file_name: artifacts/model_evaluation/metric.csv
+
+model_translation:
+  root_dir : artifcats/model_translation
+  tokenizer_path: artifacts/model_translation/translation_tokenizer
+  model_path: artifacts/model_translation/translation_model
