@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Query, HTTPException
+from fastapi.middleware.cors  import CORSMiddleware
 from textSummarizer.pipeline.prediction import PredictionPipelines
 from enum import Enum
 import uvicorn
@@ -10,9 +11,17 @@ class LengthCategory(str, Enum):
     medium = "medium"  
     long = "long"   
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
+
 
 @app.post("/")
-def starting():
+async def starting():
     return {"Summarizartion + translation"}   
 
 @app.post("/predict")
@@ -33,7 +42,7 @@ async def predict(text: str, length_category: LengthCategory):
         raise HTTPException(status_code=500, detail=str(e))
     
 @app.post("/translate")
-def translate(text:str):
+async def translate(text:str):
     try:
         trans_text=PredictionPipelines().translate(text)
         return {"translated_text":trans_text}
