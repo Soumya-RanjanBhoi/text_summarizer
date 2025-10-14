@@ -2,6 +2,7 @@ from fastapi import FastAPI, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from textSummarizer.pipeline.prediction import PredictionPipelines
 from enum import Enum
+import os
 import uvicorn
 
 app = FastAPI()
