@@ -22,6 +22,10 @@ app.add_middleware(
 
 pipeline_instance = PredictionPipelines()
 
+@app.get("/healthz")
+async def health_check():
+    return {"status": "healthy"}
+
 @app.post("/")
 async def starting():
     return {"message": "Summarization + Translation API is running"}
