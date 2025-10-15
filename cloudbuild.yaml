@@ -1,0 +1,16 @@
+steps:
+  # 1️⃣ Build and deploy using Buildpacks (no Dockerfile needed)
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        gcloud run deploy text-summarizer-service \
+          --source . \
+          --region us-central1 \
+          --platform managed \
+          --allow-unauthenticated \
+          --memory 4Gi \
+          --cpu 2 \
+          --port 8080 \
+          --set-env-vars MODEL_DIR=artifacts/model_trainer/facebook_model
